@@ -124,3 +124,35 @@ void autoControlPlantation(void)
   }
 }
 void turnPumpOn()
+{
+  pumpStatus = 1;
+  aplyCmd();
+  delay (TIME_PUMP_ON * 1000);
+  pumpStatus = 0;
+  aplyCmd();
+}
+void startTimers(void)
+{
+  timer.setInterval(READ_AIR_DATA_TM * 1000, getDhtData);
+  timer.setInterval(READ_SOIL_HUM_TM * 1000, getSoilMoist);
+  timer.setInterval(SEND_UP_DATA_TM * 1000, sendUptime);
+  timer.setInterval(AUTO_CTRL_TM * 1000, autoControlPlantation);
+}
+void sendUptime()
+{
+  Blynk.virtualWrite(1, tempDHT);
+  Blynk.virtualWrite(2, humDHT);
+  Blynk.virtualWrite(3, soilMoist);
+
+}
+void turnPumpoff()
+{
+  pumpstatus= 0
+  applycmd()
+  applycmd()
+  timer.setInterval(Reaad)
+  Blynk.virtualWrite(Read)
+  timer.setInterval (READ_AIR_DATA_TM * 1000, getDhtData  )
+  timer.setInterval(READ_AIR_DATA_TM)
+  Blynk.virtualWrite()
+}

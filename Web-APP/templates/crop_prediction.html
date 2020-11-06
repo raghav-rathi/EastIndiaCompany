@@ -1,0 +1,545 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class="container">
+    <br><br><br><br><br><br><br><br>
+
+
+    <div class="row"> 
+        <div class ="col-sm-12 col-centered" style="padding-bottom: 1em">                 
+            <center>
+                <div class="btn-group center">
+                    <button id ="manual_btn" type="button" class="btn btn-primary" onclick="citywise()">Region Wise</button>
+                    <button id="auto_btn" type="button" class="btn btn-primary" onclick="getData()">Manual N P K pH </button>
+                </div> 
+            </center>
+        </div> 
+    </div>
+
+
+    <form action="/crop" method="POST" autocomplete="off" style="text-align: center;">
+        
+        <!-- <br><br> -->
+        <div class="autocomplete" style="width:300px; height: auto; text-align: center; position: absolute; left: 41.5%;" id="city">
+            <input id="myInput" type="text" name="city" placeholder="Region">
+        </div>
+
+
+        <div class="row" id="input-value">
+          <div class = "col-md-3 float-left">
+            <div class="input-group">
+                <input  type="text" class="form-control" name="Nitrogen" placeholder="Nitrogen Value">
+              </div>
+            </div>
+    
+          <div class = "col-md-3 float-right">
+            <div class="input-group">
+                
+                <input type="text" class="form-control" name="pH" placeholder="pH Value">
+              </div>
+            </div>
+    
+          <div class ="col-md-3 float-right">
+            <div class="input-group">
+                <input  type="text" class="form-control" name="Potassium" placeholder="Potassium Value">
+              </div>
+          </div>
+          
+            <div class = "col-md-3 float-right">
+            <div class="input-group">
+                <input  type="text" class="form-control" name="Phosphorous" placeholder="Phosphorous Value">
+              </div>
+            </div>
+            <br><br>
+            <div class="row">
+            <div class = "col-md-3">
+                <br><br>
+                    <div class="input-group">
+                        <input  style="left: 15px;" type="text" class="form-control" name="temp" placeholder="Temperature">
+                      </div>
+            </div>
+            <div class = "col-md-3">
+                <br><br>
+                <div class="input-group">
+                    <input style="margin-left: 15px;" type="text" class="form-control" name="climate" placeholder="Climate">
+                </div>
+            </div>
+            <div class = "col-md-3">
+                <br><br>
+                <div class="input-group">
+                    <input style="margin-left: 15px;" type="text" class="form-control" name="rainfall" placeholder="Rainfall">
+                </div>
+            </div>
+            <div class="col-sm-3" style="margin-top: 8px; text-align: left;">
+                <br><br>
+                <label for="cars">Existing crop:</label>
+                <select name="existing">
+                    <option>  Rice  </option>
+                    <option>  Wheat  </option>
+                    <option>  Jowar(Sorghum)  </option>
+                    <option>  Barley(JAV)  </option>
+                    <option>  Bajra(Pearl Millet)  </option>
+                    <option>  Maize  </option>
+                    <option>  Ragi( naachnnii)  </option>
+                    <option>  Chickpeas(Channa)  </option>
+                    <option>  French Beans(Farasbi)  </option>
+                    <option>  Fava beans (Papdi - Val)  </option>
+                    <option>  Lima beans(Pavta)  </option>
+                    <option>  Cluster Beans(Gavar)  </option>
+                    <option>  Soyabean  </option>
+                    <option>  Peanuts  </option>
+                    <option>  Black eyed beans( chawli)  </option>
+                    <option>  Kidney beans  </option>
+                    <option>  pigeon peas(Toor Dal)  </option>
+                    <option>  Moth bean(Matki)  </option>
+                    <option>  Mung beans  </option>
+                    <option>  Green Peas  </option>
+                    <option>  Horse Gram(kulthi)  </option>
+                    <option>  Black Gram  </option>
+                    <option>  Rapeseed (Mohri)  </option>
+                    <option>  Coriander seeds  </option>
+                    <option>  Mustard seeds  </option>
+                    <option>  sesame seed  </option>
+                    <option>  Cumin seeds  </option>
+                    <option>  Lentils(Masoor Dal)  </option>
+                    <option>  Brinjal  </option>
+                    <option>  Beetroot  </option>
+                    <option>  Bitter Gourd  </option>
+                    <option>  Bottle Gourd  </option>
+                    <option>  Capsicum  </option>
+                    <option>  Cabbage  </option>
+                    <option>  Carrot  </option>
+                    <option>  Cauliflower  </option>
+                    <option>  Cucumber  </option>
+                    <option>  Coriander leaves  </option>
+                    <option>  Curry leaves  </option>
+                    <option>  Drumstick – moringa  </option>
+                    <option>  Chili  </option>
+                    <option>  Lady Finger  </option>
+                    <option>  Mushroom  </option>
+                    <option>  Onion  </option>
+                    <option>  Potato  </option>
+                    <option>  Pumpkin  </option>
+                    <option>  Radish  </option>
+                    <option>  Olive  </option>
+                    <option>  Sweet Potato  </option>
+                    <option>  Fenugreek Leaf(methi)  </option>
+                    <option>  Spinach  </option>
+                    <option>  Ridgegourd  </option>
+                    <option>  Gooseberry(Amla)  </option>
+                    <option>  Jambun(Syzygium cumini)  </option>
+                    <option>  Ziziphus mauritiana(Bor)  </option>
+                    <option>  Garcinia indica(kokam)  </option>
+                    <option>  Tamarind  </option>
+                    <option>  Tapioca(Suran)  </option>
+                    <option>  Garlic  </option>
+                    <option>  Lemon  </option>
+                    <option>  Tomato  </option>
+                    <option>  Ash Gourd  </option>
+                    <option>  Pineapple  </option>
+                    <option>  Pomegranate  </option>
+                    <option>  Banana  </option>
+                    <option>  Mango  </option>
+                    <option>  Grapes  </option>
+                    <option>  Jackfruit  </option>
+                    <option>  Guava  </option>
+                    <option>  Water Melon  </option>
+                    <option>  Musk Melon  </option>
+                    <option>  Apricot  </option>
+                    <option>  Apple  </option>
+                    <option>  Chickoo  </option>
+                    <option>  Custard apple  </option>
+                    <option>  Dates  </option>
+                    <option>  Figs  </option>
+                    <option>  Orange  </option>
+                    <option>  Papaya  </option>
+                    <option>  Aniseed  </option>
+                    <option>  Asafoetida  </option>
+                    <option>  Bay Leaf  </option>
+                    <option>  Black Pepper  </option>
+                    <option>  Cardamom  </option>
+                    <option>  Cinnamon  </option>
+                    <option>  Cloves  </option>
+                    <option>  Jaiphal(Nutmeg)  </option>
+                    <option>  Ginger  </option>
+                    <option>  Turmeric  </option>
+                    <option>  Cashewnuts  </option>
+                    <option>  Raisins  </option>
+                    <option>  Coconut  </option>
+                    <option>  Almond Nut  </option>
+                    <option>  Arecanut  </option>
+                    <option>  Pistachio Nut  </option>
+                    <option>  Lemon Grass  </option>
+                    <option>  Cotton  </option>
+                    <option>  Jute  </option>
+                    <option>  Coffee  </option>
+                    <option>  Sugarcane  </option>
+                    <option>  Sunflower  </option>
+                </select>
+            </div>
+
+        </div>
+            <!-- <form>
+                <div class="form-group row">
+                  <div class="col-sm-3">
+                    <input type="text" name="Nitrogen" class="form-control" value="Nitrogen Value">
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="text" name="Phosphorous" class="form-control" value="Phosphorous Value">
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="text" name="Potassium" class="form-control" value="Pottassium Value">
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="text" name="pH" class="form-control" value="pH Value">
+                  </div>
+                  <div class="col-sm-3" style="margin-top: 20px;">
+                    <input type="text" name="temp" class="form-control" value="Temperature">
+                  </div>
+                  <div class="col-sm-3" style="margin-top: 20px;">
+                    <input type="text" name="climate" class="form-control" value="Climate">
+                  </div>
+                </div>
+              </form> -->
+
+        </div>
+        <br><br>
+        <div class="col-md-12" style="text-align: center;">
+            <br>
+            <input type="submit" class="btn " value="Predict Crop">
+        </div>
+    </form>
+    
+<br><br><br><br><br>
+    <div>
+        <br><br>
+            <h3 style="font-weight:bold; margin-bottom: 20px;">Crops found : <span class="text-muted">{{crop_num}} </span> </h3>
+        
+        {% if display  == True %}
+        <!-- <div class="table-responsive"> -->
+            <div class="row">
+                {% if(grasses_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Grasses</h4>
+                    {% for i in grasses_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top: 20px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a style="margin-top: 20px;" href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(cucurbits_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Cucurbits</h4>
+                    {% for i in cucurbits_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(legumes_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Legumes</h4>
+                    {% for i in legumes_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(umbellifers_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Umbellifers</h4>
+                    {% for i in umbellifers_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(mustards_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Mustards</h4>
+                    {% for i in mustards_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(nightshade_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Nightshade</h4>
+                    {% for i in nightshade_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top: 10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(palm_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Palm</h4>
+                    {% for i in palm_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(myrtle_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Myrtle</h4>
+                    {% for i in myrtle_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                {% if(ginger_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Ginger</h4>
+                    {% for i in ginger_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(mallows_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Mallows</h4>
+                    {% for i in mallows_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(rutaceae_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Rutaceae</h4>
+                    {% for i in rutaceae_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- {% if(cashews_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Cashews</h4>
+                    {% for i in cashews_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %} -->
+
+                {% if(rose_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Rose</h4>
+                    {% for i in rose_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(rose_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Rose</h4>
+                    {% for i in rose_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(laurels_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Laurels</h4>
+                    {% for i in laurels_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(onions_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Onion</h4>
+                    {% for i in onions_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if(mulberry_c|length!=0): %}
+                <div class="col-sm-3">
+                    <h4>Mulberry</h4>
+                    {% for i in mulberry_c %}
+                    <div style="margin-top: 20px;" class="row">
+                        <div class="col-sm-6">
+                            <p style="margin-top:10px;">{{i}}</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{url_for('static', filename='guideline/'+i+'.html')}}"><input type="submit" value="Guideline"></a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+            </div>
+            <!-- <br><br><br><br><br><br><br><br><br><br><br>
+            <h3 style="font-weight:bold; margin-bottom: 20px;">Existing Crop: <span class="text-muted">{{crop_num}} </span> </h3>
+               <div class="col-sm-4">
+               <div style="margin-top: 20px;" class="row">
+                   <div class="col-sm-6">
+                       <p style="margin-top:10px;">{{existing}}</p>
+                   </div>
+                   <div class="col-sm-6">
+                   </div>
+               </div>
+           </div> -->
+            {% endif %}
+
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+
+<script src="../static/js/autocomplete1.js"></script>
+<script type="text/javascript">
+
+    var npk = document.getElementById("input-value");
+    var city = document.getElementById("city");
+    city.style.display = "block"
+    npk.style.display = "none"
+    
+    function getData(){
+        var npk = document.getElementById("input-value");
+        var city = document.getElementById("city");
+        // console.log(te.value);
+        npk.style.display = "block";
+        city.style.display = "none";
+        
+    }
+    function citywise(){
+        var npk = document.getElementById("input-value");
+        var city = document.getElementById("city");
+        // console.log(te.value);
+        npk.style.display = "none";
+        city.style.display = "block";
+        
+    }
+    </script>
+{% endblock %}
+
+
+
+
+<!-- ['Fava beans (Papdi - Val)', 'pigeon peas(Toor Dal)', 'Mung beans', 'Rapeseed (Mohri)', 'Cumin seeds', 'Cauliflower'] -->

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+    label{
+        color: #000;
+        /* font-weight: bold; */
+    }
+
+</style>
+<br><br><br><br><br><br><br><br><br>
+
+<div style="text-align: center; font-weight: bold;">
+    <h3>Did you make profits by selling your crop? Great!</h3><br>
+    <h3>Now, give us the outcomes of your crop which helps us support other farmers like you.</h3>
+</div>
+<br><br><br><br>
+<div>
+    <form action="{{url_for('feedback')}}" method="POST">
+        <div class="form-group row">
+            <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Crop:</label>
+            <div class="col-sm-9">
+                <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter your crop name" name="cropname">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Cultivation Season:</label>
+            <div class="col-sm-9">
+                <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter the season" name="cult">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Duration:</label>
+            <div class="col-sm-9">
+                <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter number of months" name="duration">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Location:</label>
+            <div class="col-sm-9">
+                <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter your city" name="location">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Seed rate:</label>
+            <div class="col-sm-9">
+                <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter your city" name="seed">
+            </div>
+          </div>
+          <div class="form-group row">
+              <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Pesticides Used:</label>
+              <div class="col-sm-9">
+                  <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter pesticides" name="pesticides">
+            </div>
+          </div>
+          <div class="form-group row">
+              <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Quality Used:</label>
+              <div class="col-sm-9">
+                  <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter quality of seeds" name="quality">
+            </div>
+          </div>
+          <div class="form-group row">
+              <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Cost of Cultivation:</label>
+              <div class="col-sm-9">
+                  <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter total cost" name="cost">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Yield:</label>
+            <div class="col-sm-9">
+                <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter your city" name="yield">
+            </div>
+          </div>
+          <div class="form-group row">
+              <label style="font-size: 1.2rem;" class="col-sm-3 col-form-label">Sold Price:</label>
+              <div class="col-sm-9">
+                  <input type="text" style="margin-bottom: 8px; height: 40px;" class="form-control" placeholder="Enter price per Kg" name="sold">
+            </div>
+          </div>
+          <div class="col-md-12" style="text-align: center;">
+            <br><br>
+            <input type="submit" class="btn " value="Submit">
+        </div>
+      </form>
+</div>
+
+
+{% endblock %}

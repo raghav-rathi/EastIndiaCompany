@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Space Patrol Delta</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <!-- <link href="/static/img/favicon.png" rel="icon"> -->
+  <!-- <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/static/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="/static/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/static/css/style1.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/autocomplete2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js">
+  
+
+</head>
+
+<body>
+  
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top" style="padding: 17px 16px 21px;">
+        <div class="container" style="margin: 0 8%;">
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
+            aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a class="navbar-brand text-brand" style="margin-right: 30%;" href="{{url_for('main')}}">Space<span class="color-b">&nbsp; Patrol &nbsp;</span>Delta</a>
+          <button type="button" class="btn btn-link nav-search navbar-toggle-box-collapse d-md-none" data-toggle="collapse"
+            data-target="#navbarTogglerDemo01" aria-expanded="false">
+            <span class="fa fa-search" aria-hidden="true"></span>
+          </button>
+          <div class="navbar-collapse collapse justify-content-end" style="margin-top: 18px;" id="navbarDefault">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link " href="{{url_for('upload')}}">Pest </a>
+              </li>
+              <!-- <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:7000/">Fertilizer</a>
+                </li> -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('weather')}}">Weather</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('crop')}}">Crop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('market')}}">Market</a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('shop')}}">Shops</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('feedback')}}">Outcomes</a>
+            </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('fertilizer_info')}}">FAQ</a>
+              </li>
+              <li class="nav-item">
+                  <div id="google_translate_element"></div>
+      
+                  <script type="text/javascript">
+                  function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+                  }
+                  </script>
+                  
+                  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                </li>
+            </ul>
+          </div>
+          <!-- <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" data-toggle="collapse"
+            data-target="#navbarTogglerDemo01" aria-expanded="false">
+            <span class="fa fa-search" aria-hidden="true"></span>
+          </button> -->
+        </div>
+      </nav>
+
+      <div class="container">
+            {% block content %}{% endblock %}
+      </div>
+
+
+
+
+  <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div> -->
+
+  
+
+  <!-- JavaScript Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+  <script src="/static/lib/jquery/jquery.min.js"></script>
+  <script src="/static/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/static/lib/popper/popper.min.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/lib/easing/easing.min.js"></script>
+  <script src="/static/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/static/lib/scrollreveal/scrollreveal.min.js"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="/static/contactform/contactform.js"></script>
+
+  <script src="/static/js/autocomplete1.js"></script>
+  <!-- Template Main Javascript File -->
+  <script src="/static/js/main.js"></script>
+
+  <!-- Pest detection -->
+  <!-- <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <script src="{{ url_for('static', filename='js_detection/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js_detection/bootstrap.min.js') }}"></script>
+  <link href="{{ url_for('static', filename='css/test.css') }}" rel="stylesheet"> -->
+  <script src="{{ url_for('static', filename='js_detection/newjs.js') }}" type="text/javascript"></script>
+
+    <!-- <style>
+    body { 
+	/* width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif; */
+	/* background: #092756; */
+	/* color: #fff;
+	font-size: 18px;
+	text-align:center;
+	letter-spacing:1.2px; */
+	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+    }
+</style> -->
+<style>
+  body {
+    /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+ background-blend-mode: multiply,multiply; */
+ /* background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%); */
+ /* background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%); */
+ /* background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%); */
+ /* background-image: linear-gradient(to right, #243949 0%, #517fa4 100%); */
+ /* background-color: #9fa4c4;
+background-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%); */
+/* background-color: #7f5a83;
+background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%); */
+
+
+
+  }
+</style>
+
+</body>
+</html>

@@ -47,7 +47,7 @@
  - Leaflet
 
 
-<img width="1792" alt="Screenshot 2020-11-01 at 8 41 39 AM" src="https://user-images.githubusercontent.com/45091369/97796019-4f0b9100-1c33-11eb-8c3e-4b7f293d7497.png">
+![1](https://user-images.githubusercontent.com/45091369/98438337-871d4300-210f-11eb-886f-8c238b38d737.JPG)
 
 ### **Pest Prediction CNN model**
  - ML Implementation

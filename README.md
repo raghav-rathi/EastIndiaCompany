@@ -1,4 +1,4 @@
-# **RevaHack-DataDrivenFarming**
+# **Govt Tech Thon -DataDrivenFarming**
 
 ## **Data Driven Agriculture**
 

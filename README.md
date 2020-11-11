@@ -1,6 +1,7 @@
 # **Govt Tech Thon -DataDrivenFarming**
 
 ## **Data Driven Agriculture**
+### **Note**: All the datasets we have used in this project are already there in the WebAPP folder
 
 
 ## **Technology:**

@@ -1,0 +1,15 @@
+Keras
+Tensorflow
+opencv
+Numpy
+Pandas
+scikit-learn
+Pillow
+bs4
+requests
+os
+pyrebase
+firebase-admin
+Twillo
+OWA
+Flask

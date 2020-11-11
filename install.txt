@@ -1,0 +1,14 @@
+Run Instructions:
+
+For Running Web Application:
+1)First download the zip Web-APP and unzip it.
+2)Opent the folder using any IDE.
+3)Install Requirements.txt
+4)Run app.py
+
+
+For Running IoT model:
+1)You need to build the complete model for it using same sensors.
+2)Install arduino IDE and copy paste the code.
+3)Install all the Libraries and compile the code and upload it to NODE MCU.
+4)Install app and connect Node MCU with application.

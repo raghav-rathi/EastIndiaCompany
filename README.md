@@ -104,6 +104,8 @@ Web Scarping using bs4 (python library) will give the 15 days weather forcast
 ![6](https://user-images.githubusercontent.com/45091369/98438346-8dabba80-210f-11eb-9a13-e8877776adcf.JPG)
 ![7](https://user-images.githubusercontent.com/45091369/98438347-8e445100-210f-11eb-8ede-3eaca54e116d.JPG)
 
+#gg
+
 
 
 

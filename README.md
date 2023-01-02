@@ -34,6 +34,7 @@
  - os
  - OWA
  - Flask
+ - Matplotlib
 
 
 ### **R Library:**
